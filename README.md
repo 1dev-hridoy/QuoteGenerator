@@ -1,5 +1,5 @@
 # 🌟 Modern Quote Generator
-
+![Quote Generator Preview](https://raw.githubusercontent.com/1dev-hridoy/QuoteGenerator/refs/heads/main/preview/ss.png)
 A beautiful, responsive quote generator with dark mode support and modern UI effects. This application fetches inspirational quotes from the ZenQuotes API through a PHP proxy to avoid CORS issues.
 
 ## 🚀 Features
