@@ -16,6 +16,9 @@
         
         <!-- Main Card -->
         <div class="card relative bg-white dark:bg-dark-100 rounded-xl shadow-custom dark:shadow-custom-dark p-8 md:p-10 overflow-hidden z-0">
+            <!-- API Status Indicator -->
+            <div id="api-status" class="api-status offline"></div>
+            
             <!-- Decorative blobs -->
             <div class="blob blob-1 float"></div>
             <div class="blob blob-2 float-delay"></div>
@@ -48,7 +51,7 @@
             <!-- Quote Container -->
             <div id="quote-container" class="quote-container relative mb-8 p-6 bg-gray-50 dark:bg-dark-200 rounded-lg z-10">
                 <span class="quote-mark left-quote text-primary-500 dark:text-blue-500">"</span>
-                <p id="quote-text" class="text-lg md:text-xl text-gray-700 dark:text-gray-200 mb-4 text-center">Click the button below to generate your first inspirational quote.</p>
+                <p id="quote-text" class="text-lg md:text-xl text-gray-700 dark:text-gray-200 mb-4 text-center">Click the button below to generate an inspirational quote.</p>
                 <p id="quote-author" class="text-right text-gray-500 dark:text-gray-400 font-medium italic">- Your journey begins</p>
                 <span class="quote-mark right-quote text-primary-500 dark:text-blue-500">"</span>
                 
@@ -61,6 +64,19 @@
                 </svg>
             </div>
             
+            <!-- Loading Spinner (hidden by default) -->
+            <div id="loading-spinner" class="hidden absolute inset-0 flex items-center justify-center bg-white/80 dark:bg-dark-100/80 z-20 rounded-lg">
+                <svg class="w-10 h-10 text-primary-500 dark:text-blue-500 spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+            </div>
+            
+            <!-- Source Indicator -->
+            <div id="source-indicator" class="text-center text-xs text-gray-500 dark:text-gray-400 mb-4">
+                <span id="api-mode" class="inline-block px-2 py-1 rounded-full bg-gray-100 dark:bg-dark-200">Using local quotes</span>
+            </div>
+            
             <!-- Button Container with SVG decoration -->
             <div class="flex justify-center relative z-10">
                 <button id="generate-btn" class="group btn-gradient-light dark:btn-gradient-dark text-white font-semibold py-3 px-8 rounded-full focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-blue-500 focus:ring-offset-2 relative overflow-hidden">
@@ -71,5 +87,10 @@
                         </svg>
                     </span>
                 </button>
+            </div>
+            
+            <!-- API Attribution -->
+            <div class="mt-4 text-center text-xs text-gray-500 dark:text-gray-400">
+                <p>Powered by <a href="https://zenquotes.io/" target="_blank" class="text-primary-600 dark:text-blue-400 hover:underline">ZenQuotes API</a> with local fallback</p>
             </div>
         </div>

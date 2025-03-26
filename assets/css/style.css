@@ -131,3 +131,32 @@
 .float-delay {
     animation: float 6s ease-in-out 2s infinite;
 }
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.spin {
+    animation: spin 1.5s linear infinite;
+}
+
+.api-status {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.api-status.online {
+    background-color: #10b981;
+    box-shadow: 0 0 5px #10b981;
+}
+
+.api-status.offline {
+    background-color: #ef4444;
+    box-shadow: 0 0 5px #ef4444;
+}
